@@ -5,7 +5,7 @@ This project demonstrates  the memory leak of Avatica's DriverVersion.load
 2. Upload target/calcite-avatica-driver-version-test-0.1-SNAPSHOT-bin.zip to a Linux CentOS 6.9 machine
 3. Unzip the zip to a folder, cd the folder
 4. Run the run.sh. 
-5. Then using the jeprof util to monitor the heap by following 
+5. Then using the jeprof util to monitor the heap by following steps(Verified on Centos 6.9, should work on most Linux-es)
      - wget https://github.com/jemalloc/jemalloc/releases/download/5.1.0/jemalloc-5.1.0.tar.bz2 
      - tar xvf jemalloc-5.1.0.tar.bz2
      - cd jemalloc-5.1.0
