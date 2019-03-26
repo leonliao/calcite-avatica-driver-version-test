@@ -1,17 +1,17 @@
 # calcite-avatica-driver-version-test
 This project demonstrates  the memory leak of Avatica's DriverVersion.load
 
-1. Run mvn package
+1. Run `mvn package`
 2. Upload target/calcite-avatica-driver-version-test-0.1-SNAPSHOT-bin.zip to a Linux CentOS 6.9 machine
 3. Unzip the zip to a folder, cd the folder
-4. Run the run.sh. 
+4. Run the `./run.sh`. 
 5. Then using the jeprof util to monitor the heap by following steps(Verified on Centos 6.9, should work on most Linux-es)
-     - wget https://github.com/jemalloc/jemalloc/releases/download/5.1.0/jemalloc-5.1.0.tar.bz2 
-     - tar xvf jemalloc-5.1.0.tar.bz2
-     - cd jemalloc-5.1.0
-     - ./configure --enable-prof --prefix=/usr/local
-     - make
-     - sudo make install
+     - `wget https://github.com/jemalloc/jemalloc/releases/download/5.1.0/jemalloc-5.1.0.tar.bz2 `
+     - `tar xvf jemalloc-5.1.0.tar.bz2`
+     - `cd jemalloc-5.1.0`
+     - `./configure --enable-prof --prefix=/usr/local`
+     - `make`
+     - `sudo make install`
      - Add ``export MALLOC_CONF="prof:true,lg_prof_sample:1,lg_prof_interval:26,prof_prefix:/{YOUR INTENDED FOLDER}/jeprof.out"`` to run.sh
      - Add ``LD_PRELOAD="/usr/local/lib/libjemalloc.so"`` before the ``nohup java`` in run.sh
      - Execute the run.sh to start the test Java main class
